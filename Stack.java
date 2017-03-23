@@ -1,19 +1,17 @@
 public class Stack{
   // Properties
-  private Node head = null;
+  private Node top = null;
 
   // Constructor: Using default constructor
   
   // Getter/Setter Methods
   
-  public Node getHead() {
-    return this.head;
+  public Node getTop() {
+    return this.top;
   }
   
-  public void setHead(Node newNode) {
-    this.head = newNode;
-    // TEST: will this work in all circumstances?
-    this.size = 1;
+  public void setTop(Node newNode) {
+    this.top = newNode;
   }
   
   /* Traverses & prints list */
@@ -22,7 +20,7 @@ public class Stack{
       System.out.println("List is empty.");
     }
     else {
-      Node tmp = this.head;
+      Node tmp = this.top;
       while (tmp != null) {
         tmp.print();
         tmp = tmp.getNext();
@@ -32,10 +30,10 @@ public class Stack{
   }
   
   public boolean isEmpty() {
-    return this.head==null;
+    return this.top==null;
   }
   
-  public void add(int index, int data) {
+  /*public void add(int index, int data) {
     Node newNode = new Node(data);
     
     if( index > this.size)
@@ -73,19 +71,15 @@ public class Stack{
     
 
    
-    // Write pseudocode to do entire add method
-    // use addToBeginning, addToEnd to stand in
-    // for the stuff we already have done
-    this.size++;
     }
-  }
+  }*/
   
   
   
   
   
   public void destroy() {
-    this.head = null;
+    this.top = null;
   }
   
 }
