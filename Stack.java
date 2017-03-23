@@ -1,7 +1,6 @@
-public class SinglyLinkedList{
+public class Stack{
   // Properties
   private Node head = null;
-  private int size = 0;
 
   // Constructor: Using default constructor
   
@@ -15,10 +14,6 @@ public class SinglyLinkedList{
     this.head = newNode;
     // TEST: will this work in all circumstances?
     this.size = 1;
-  }
-
-  public int getSize() {
-    return this.size;
   }
   
   /* Traverses & prints list */
@@ -85,49 +80,9 @@ public class SinglyLinkedList{
     }
   }
   
-  // Finds a node and returns its reference
-  public Node find(int index) {
-    // BUG: null pointer exception when index < 0
-    Node tmp = head;
-    if (index < 0 || index > size) {
-      //System.out.println("Find: " + index);
-      return null;
-    }
-    else {
-      for (int i = 0; i < index; i++)
-        tmp = tmp.getNext();
-      return tmp;
-    }
-  }
   
-  // Deletes node at index if it exists
-  public void delete(int index) {
-    Node tmp = this.head;
-    int i = 0;
-    // delete head
-    if (index == 0) {
-      this.head = this.head.getNext();
-    }
-    // delete nodes later in list
-    while (tmp.getNext() != null 
-             && i < index-1) {
-      //System.out.println("Delete: " + i);
-      tmp = tmp.getNext();
-      i++;
-    }
-    if (index < 0) {
-      System.out.println("Index can't be negative.");
-    }
-    else {
-      try {
-        tmp.setNext(tmp.getNext().getNext());
-        size--;
-      }
-      catch (Exception e) {
-        System.out.println("That index does not exist.");
-      }
-    }
-  }
+  
+  
   
   public void destroy() {
     this.head = null;
