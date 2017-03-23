@@ -1,29 +1,32 @@
 public class Node{
   // Properties
-  private int data;
+  private int rank;
+  private String suite;
   private Node next;
   
   // Constructor
   public Node() {
-    this.data = 0;
+    this.rank = 0;
+    this.suite = "Joker";
     this.next = null;
   }
   
-  public Node(int data) {
-    this.data = data;
+  public Node(int rank, String suite) {
+    this.rank = rank;
+    this.suite = suite;
     this.next = null;
   }
   
   // Getter/Setter Methods
   
-  public int getData() {
-    return this.data;
+  public int getRank() {
+    return this.rank;
   }
   
-  public void setData(int data) {
-    this.data = data;
+  public String getSuite() {
+    return this.suite;
   }
-  
+
   public Node getNext() {
     return this.next;
   }
@@ -36,7 +39,18 @@ public class Node{
   
   /* Prints data in node */
   public void print() {
-    System.out.print(this.data + " ");
+    String rank;
+    if (this.rank == 11)
+      rank = "J";
+    else if (this.rank ==12)
+      rank = "Q";
+    else if (this.rank ==13)
+      rank = "K";
+    else if (this.rank ==1)
+      rank = "A";
+    else 
+      rank = Integer.toString(this.rank);
+    System.out.print(rank + " of " + this.suite + " ");
   }
   
 }
