@@ -33,7 +33,7 @@ public class Queue{
     return this.head==null;
   }
   
-  public void add(int index, int data) {
+  /*public void add(int index, int data) {
     Node newNode = new Node(data);
     
     if( index > this.size)
@@ -76,7 +76,7 @@ public class Queue{
     // for the stuff we already have done
     this.size++;
     }
-  }
+  }*/
   
   
   
