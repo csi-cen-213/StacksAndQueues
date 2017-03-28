@@ -6,7 +6,7 @@ public class Stack{
   
   // Getter/Setter Methods
   
-  public Node getTop() {
+  public Node peek() {
     return this.top;
   }
   
@@ -33,6 +33,21 @@ public class Stack{
     return this.top==null;
   }
   
+  public void push(Node newNode) {
+    newNode.setNext(this.top);
+    this.top = newNode;
+  }
+  
+  public Node pop(){
+    if (this.isEmpty()){
+      return null;
+    }
+    else {
+      Node tmp = this.top;
+      this.top = top.getNext();
+      return tmp;
+    }
+  }
   /*public void add(int index, int data) {
     Node newNode = new Node(data);
     
