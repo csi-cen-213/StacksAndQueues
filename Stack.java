@@ -33,7 +33,7 @@ public class Stack{
     return this.top==null;
   }
   
-  public void push(Card newCard) {
+  public void addCard(Card newCard) {
     newCard.setNext(this.top);
     this.top = newCard;
   }
@@ -48,46 +48,7 @@ public class Stack{
       return tmp;
     }
   }
-  /*public void add(int index, int data) {
-    Card newCard = new Card(data);
-    
-    if( index > this.size)
-      //error
-      System.out.println("Index " + index + " does not exist.");
-    else {
-      // if list is empty, newCard is head
-      if (this.isEmpty()) {
-        this.head = newCard;
-      }
-      // adds to front of list
-      else if (index == 0) {
-        newCard.setNext(head);
-        this.head = newCard;
-      }
-      else if (index == this.size) {
-        // adds to end of list
-        Card current = this.head;
-        while (current.getNext() != null) {
-          current = current.getNext();
-        }
-        current.setNext(newCard);
-      }
-      else {
-        // adds to middle of list
-        Card current = this.head;
-        for(int i = 0; i < index - 1; i++) {
-          current = current.getNext();
-        }
-        newCard.setNext(current.getNext());
-        current.setNext(newCard);
-      }
-    
-    
-    
-
-   
-    }
-  }*/
+ 
   
   
   
@@ -97,4 +58,24 @@ public class Stack{
     this.top = null;
   }
   
+  public void populateDeck() {
+    for (int i = 0; i < 4; i++) {
+      for (int j = 1; j <= 13; j++) {
+        switch (i) {
+          case 1: 
+            this.addCard(new Card(j, "hearts"));
+            break;
+          case 2:
+            this.addCard(new Card(j, "diamonds"));
+            break;
+          case 3:
+            this.addCard(new Card(j, "clubs"));
+            break;
+          case 0:
+            this.addCard(new Card(j, "spades"));
+            break;
+        }
+      }
+    }
+  }
 }

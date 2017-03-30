@@ -30,7 +30,7 @@ public class Main{
     deck2.dequeue().print();
     System.out.println(deck2.dequeue());
     deck2.print();*/
-    Queue deck = new Queue();
+    Stack deck = new Stack();
     deck.populateDeck();
     deck.print();
   }

@@ -104,25 +104,4 @@ public class Queue{
     this.back = null;
   }
   
-  public void populateDeck() {
-    for (int i = 0; i < 4; i++) {
-      for (int j = 1; j <= 13; j++) {
-        switch (i) {
-          case 1: 
-            this.enqueue(new Card(j, "hearts"));
-            break;
-          case 2:
-            this.enqueue(new Card(j, "diamonds"));
-            break;
-          case 3:
-            this.enqueue(new Card(j, "clubs"));
-            break;
-          case 0:
-            this.enqueue(new Card(j, "spades"));
-            break;
-        }
-      }
-    }
-  }
-  
 }
