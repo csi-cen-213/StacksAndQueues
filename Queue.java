@@ -6,7 +6,8 @@ public class Queue extends Stack{
   
   // Getter/Setter Methods
   
-  public void enqueue(Card newCard) {
+  @Override
+  public void addCard(Card newCard) {
     if (this.isEmpty()) {
       this.top = newCard;
       this.bottom = newCard;
@@ -17,7 +18,8 @@ public class Queue extends Stack{
     }
   }
 
-  public Card dequeue(){
+  @Override
+  public Card removeCard(){
     if (this.isEmpty()){
       return null;
     }
@@ -29,10 +31,6 @@ public class Queue extends Stack{
       return tmp;
     }
   }
-  
-  
-
-  
   
   @Override
   public void destroy() {

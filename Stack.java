@@ -34,7 +34,7 @@ public class Stack{
     this.top = newCard;
   }
   
-  public Card pop(){
+  public Card removeCard(){
     if (this.isEmpty()){
       return null;
     }
