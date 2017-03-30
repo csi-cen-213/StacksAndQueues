@@ -1,17 +1,36 @@
 public class Queue{
   // Properties
-  private Node head = null;
+  private Node front = null;
+  private Node back = null;
 
   // Constructor: Using default constructor
   
   // Getter/Setter Methods
   
-  public Node getHead() {
-    return this.head;
+  public Node peek() {
+    return this.front;
   }
   
-  public void setHead(Node newNode) {
-    this.head = newNode;
+  public void enqueue(Node newNode) {
+    if (this.isEmpty()) {
+      this.front = newNode;
+      this.back = newNode;
+    }
+    else {
+      this.back.setNext(newNode);
+      this.back = newNode;
+    }
+  }
+
+  public Node dequeue(){
+    if (this.isEmpty()){
+      return null;
+    }
+    else {
+      Node tmp = this.front;
+      this.front = front.getNext();
+      return tmp;
+    }
   }
   
   /* Traverses & prints list */
@@ -20,7 +39,7 @@ public class Queue{
       System.out.println("List is empty.");
     }
     else {
-      Node tmp = this.head;
+      Node tmp = this.front;
       while (tmp != null) {
         tmp.print();
         tmp = tmp.getNext();
@@ -30,7 +49,7 @@ public class Queue{
   }
   
   public boolean isEmpty() {
-    return this.head==null;
+    return this.front==null;
   }
   
   /*public void add(int index, int data) {
@@ -78,11 +97,30 @@ public class Queue{
     }
   }*/
   
-  
-  
-  
   public void destroy() {
-    this.head = null;
+    this.front = null;
+    this.back = null;
+  }
+  
+  public void populateDeck() {
+    for (int i = 0; i < 4; i++) {
+      for (int j = 1; j <= 13; j++) {
+        switch (i) {
+          case 1: 
+            this.enqueue(new Node(j, "hearts"));
+            break;
+          case 2:
+            this.enqueue(new Node(j, "diamonds"));
+            break;
+          case 3:
+            this.enqueue(new Node(j, "clubs"));
+            break;
+          case 0:
+            this.enqueue(new Node(j, "spades"));
+            break;
+        }
+      }
+    }
   }
   
 }
