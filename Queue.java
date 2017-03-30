@@ -1,34 +1,36 @@
 public class Queue{
   // Properties
-  private Node front = null;
-  private Node back = null;
+  private Card front = null;
+  private Card back = null;
 
   // Constructor: Using default constructor
   
   // Getter/Setter Methods
   
-  public Node peek() {
+  public Card peek() {
     return this.front;
   }
   
-  public void enqueue(Node newNode) {
+  public void enqueue(Card newCard) {
     if (this.isEmpty()) {
-      this.front = newNode;
-      this.back = newNode;
+      this.front = newCard;
+      this.back = newCard;
     }
     else {
-      this.back.setNext(newNode);
-      this.back = newNode;
+      this.back.setNext(newCard);
+      this.back = newCard;
     }
   }
 
-  public Node dequeue(){
+  public Card dequeue(){
     if (this.isEmpty()){
       return null;
     }
     else {
-      Node tmp = this.front;
+      Card tmp = this.front;
       this.front = front.getNext();
+      if (this.front == null)
+        this.back = null;
       return tmp;
     }
   }
@@ -39,7 +41,7 @@ public class Queue{
       System.out.println("List is empty.");
     }
     else {
-      Node tmp = this.front;
+      Card tmp = this.front;
       while (tmp != null) {
         tmp.print();
         tmp = tmp.getNext();
@@ -53,37 +55,37 @@ public class Queue{
   }
   
   /*public void add(int index, int data) {
-    Node newNode = new Node(data);
+    Card newCard = new Card(data);
     
     if( index > this.size)
       //error
       System.out.println("Index " + index + " does not exist.");
     else {
-      // if list is empty, newNode is head
+      // if list is empty, newCard is head
       if (this.isEmpty()) {
-        this.head = newNode;
+        this.head = newCard;
       }
       // adds to front of list
       else if (index == 0) {
-        newNode.setNext(head);
-        this.head = newNode;
+        newCard.setNext(head);
+        this.head = newCard;
       }
       else if (index == this.size) {
         // adds to end of list
-        Node current = this.head;
+        Card current = this.head;
         while (current.getNext() != null) {
           current = current.getNext();
         }
-        current.setNext(newNode);
+        current.setNext(newCard);
       }
       else {
         // adds to middle of list
-        Node current = this.head;
+        Card current = this.head;
         for(int i = 0; i < index - 1; i++) {
           current = current.getNext();
         }
-        newNode.setNext(current.getNext());
-        current.setNext(newNode);
+        newCard.setNext(current.getNext());
+        current.setNext(newCard);
       }
     
     
@@ -107,16 +109,16 @@ public class Queue{
       for (int j = 1; j <= 13; j++) {
         switch (i) {
           case 1: 
-            this.enqueue(new Node(j, "hearts"));
+            this.enqueue(new Card(j, "hearts"));
             break;
           case 2:
-            this.enqueue(new Node(j, "diamonds"));
+            this.enqueue(new Card(j, "diamonds"));
             break;
           case 3:
-            this.enqueue(new Node(j, "clubs"));
+            this.enqueue(new Card(j, "clubs"));
             break;
           case 0:
-            this.enqueue(new Node(j, "spades"));
+            this.enqueue(new Card(j, "spades"));
             break;
         }
       }

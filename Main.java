@@ -1,11 +1,11 @@
 public class Main{
   public static void main(String [ ] args) {
-    /*Node card1 = new Node(1,"Hearts");
-    Node card2 = new Node(2,"Hearts");
-    Node card3 = new Node(3,"Hearts");
-    Node card4 = new Node(1,"Hearts");
-    Node card5 = new Node(2,"Hearts");
-    Node card6 = new Node(3,"Hearts");*/
+    /*Card card1 = new Card(1,"Hearts");
+    Card card2 = new Card(2,"Hearts");
+    Card card3 = new Card(3,"Hearts");
+    Card card4 = new Card(1,"Hearts");
+    Card card5 = new Card(2,"Hearts");
+    Card card6 = new Card(3,"Hearts");*/
     /*card1.print();
     card2.print();
     card3.print();*/

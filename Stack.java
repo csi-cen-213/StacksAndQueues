@@ -1,17 +1,17 @@
 public class Stack{
   // Properties
-  private Node top = null;
+  private Card top = null;
 
   // Constructor: Using default constructor
   
   // Getter/Setter Methods
   
-  public Node peek() {
+  public Card peek() {
     return this.top;
   }
   
-  public void setTop(Node newNode) {
-    this.top = newNode;
+  public void setTop(Card newCard) {
+    this.top = newCard;
   }
   
   /* Traverses & prints list */
@@ -20,7 +20,7 @@ public class Stack{
       System.out.println("List is empty.");
     }
     else {
-      Node tmp = this.top;
+      Card tmp = this.top;
       while (tmp != null) {
         tmp.print();
         tmp = tmp.getNext();
@@ -33,53 +33,53 @@ public class Stack{
     return this.top==null;
   }
   
-  public void push(Node newNode) {
-    newNode.setNext(this.top);
-    this.top = newNode;
+  public void push(Card newCard) {
+    newCard.setNext(this.top);
+    this.top = newCard;
   }
   
-  public Node pop(){
+  public Card pop(){
     if (this.isEmpty()){
       return null;
     }
     else {
-      Node tmp = this.top;
+      Card tmp = this.top;
       this.top = top.getNext();
       return tmp;
     }
   }
   /*public void add(int index, int data) {
-    Node newNode = new Node(data);
+    Card newCard = new Card(data);
     
     if( index > this.size)
       //error
       System.out.println("Index " + index + " does not exist.");
     else {
-      // if list is empty, newNode is head
+      // if list is empty, newCard is head
       if (this.isEmpty()) {
-        this.head = newNode;
+        this.head = newCard;
       }
       // adds to front of list
       else if (index == 0) {
-        newNode.setNext(head);
-        this.head = newNode;
+        newCard.setNext(head);
+        this.head = newCard;
       }
       else if (index == this.size) {
         // adds to end of list
-        Node current = this.head;
+        Card current = this.head;
         while (current.getNext() != null) {
           current = current.getNext();
         }
-        current.setNext(newNode);
+        current.setNext(newCard);
       }
       else {
         // adds to middle of list
-        Node current = this.head;
+        Card current = this.head;
         for(int i = 0; i < index - 1; i++) {
           current = current.getNext();
         }
-        newNode.setNext(current.getNext());
-        current.setNext(newNode);
+        newCard.setNext(current.getNext());
+        current.setNext(newCard);
       }
     
     

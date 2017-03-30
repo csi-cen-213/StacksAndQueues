@@ -1,17 +1,17 @@
-public class Node{
+public class Card{
   // Properties
   private int rank;
   private String suite;
-  private Node next;
+  private Card next;
   
   // Constructor
-  public Node() {
+  public Card() {
     this.rank = 0;
     this.suite = "Joker";
     this.next = null;
   }
   
-  public Node(int rank, String suite) {
+  public Card(int rank, String suite) {
     this.rank = rank;
     this.suite = suite;
     this.next = null;
@@ -27,11 +27,11 @@ public class Node{
     return this.suite;
   }
 
-  public Node getNext() {
+  public Card getNext() {
     return this.next;
   }
   
-  public void setNext(Node next) {
+  public void setNext(Card next) {
     this.next = next;
   }
   
