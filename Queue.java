@@ -1,24 +1,19 @@
-public class Queue{
+public class Queue extends Stack{
   // Properties
-  private Card front = null;
-  private Card back = null;
+  private Card bottom = null;
 
   // Constructor: Using default constructor
   
   // Getter/Setter Methods
   
-  public Card peek() {
-    return this.front;
-  }
-  
   public void enqueue(Card newCard) {
     if (this.isEmpty()) {
-      this.front = newCard;
-      this.back = newCard;
+      this.top = newCard;
+      this.bottom = newCard;
     }
     else {
-      this.back.setNext(newCard);
-      this.back = newCard;
+      this.bottom.setNext(newCard);
+      this.bottom = newCard;
     }
   }
 
@@ -27,81 +22,22 @@ public class Queue{
       return null;
     }
     else {
-      Card tmp = this.front;
-      this.front = front.getNext();
-      if (this.front == null)
-        this.back = null;
+      Card tmp = this.top;
+      this.top = top.getNext();
+      if (this.top == null)
+        this.bottom = null;
       return tmp;
     }
   }
   
-  /* Traverses & prints list */
-  public void print() {
-    if (this.isEmpty()) {
-      System.out.println("List is empty.");
-    }
-    else {
-      Card tmp = this.front;
-      while (tmp != null) {
-        tmp.print();
-        tmp = tmp.getNext();
-      }
-      System.out.println("");
-    }
-  }
   
-  public boolean isEmpty() {
-    return this.front==null;
-  }
-  
-  /*public void add(int index, int data) {
-    Card newCard = new Card(data);
-    
-    if( index > this.size)
-      //error
-      System.out.println("Index " + index + " does not exist.");
-    else {
-      // if list is empty, newCard is head
-      if (this.isEmpty()) {
-        this.head = newCard;
-      }
-      // adds to front of list
-      else if (index == 0) {
-        newCard.setNext(head);
-        this.head = newCard;
-      }
-      else if (index == this.size) {
-        // adds to end of list
-        Card current = this.head;
-        while (current.getNext() != null) {
-          current = current.getNext();
-        }
-        current.setNext(newCard);
-      }
-      else {
-        // adds to middle of list
-        Card current = this.head;
-        for(int i = 0; i < index - 1; i++) {
-          current = current.getNext();
-        }
-        newCard.setNext(current.getNext());
-        current.setNext(newCard);
-      }
-    
-    
-    
 
-   
-    // Write pseudocode to do entire add method
-    // use addToBeginning, addToEnd to stand in
-    // for the stuff we already have done
-    this.size++;
-    }
-  }*/
   
+  
+  @Override
   public void destroy() {
-    this.front = null;
-    this.back = null;
+    this.top = null;
+    this.bottom = null;
   }
   
 }

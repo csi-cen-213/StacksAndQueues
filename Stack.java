@@ -1,6 +1,6 @@
 public class Stack{
   // Properties
-  private Card top = null;
+  protected Card top = null;
 
   // Constructor: Using default constructor
   
@@ -8,10 +8,6 @@ public class Stack{
   
   public Card peek() {
     return this.top;
-  }
-  
-  public void setTop(Card newCard) {
-    this.top = newCard;
   }
   
   /* Traverses & prints list */
