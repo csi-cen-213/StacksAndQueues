@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Stack{
   // Properties
   protected Card top = null;
@@ -72,6 +74,33 @@ public class Stack{
             break;
         }
       }
+    }
+  }
+  
+  public void shuffle() {
+    Random rand = new Random();
+    // create temporary array
+    Card[] tmp = new Card[52];
+    for (int i = 0; i < 52; i++) {
+      tmp[i] = null;
+    }
+    // Randomize cards into array
+    while (!this.isEmpty()) {
+      int index = rand. nextInt(52);
+      if (tmp[index] == null)
+        tmp[index] = this.removeCard();
+      else {
+        while (tmp[index] != null) {
+          index++;
+          if (index > 51) index = 0;
+        }
+        tmp[index] = this.removeCard();
+      }
+    }
+    // put result into deck
+    for (int i = 0; i < 52; i++) {
+      if (tmp[i] != null)
+        this.addCard(tmp[i]);
     }
   }
 }
