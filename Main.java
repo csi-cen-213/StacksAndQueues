@@ -30,9 +30,9 @@ public class Main{
     deck2.dequeue().print();
     System.out.println(deck2.dequeue());
     deck2.print();*/
-    Stack deck = new Stack();
+    //Stack deck = new Stack();
     //deck.populateDeck();
-    deck.addCard(card1);
+    /*deck.addCard(card1);
     deck.addCard(card2);
     deck.addCard(card3);
     deck.addCard(card4);
@@ -40,7 +40,15 @@ public class Main{
     deck.addCard(card6);
     deck.print();
     deck.shuffle();
-    deck.print();
+    deck.print();*/
+    Queue deck = new Queue();
+    deck.addCard(card1);
+    deck.addCard(card2);
+    deck.addCard(card3);
+    deck.addCard(card4);
+    //deck.addCard(card5);
+    //deck.addCard(card6);
+    deck.playWar();
   }
 
   
